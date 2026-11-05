@@ -57,6 +57,9 @@
   .note{margin:0;color:var(--muted);font-size:.88rem}
   .hidden{display:none !important}
   .done h2{margin:0;font-size:1.25rem;font-weight:900}
+  .closed{text-align:center;gap:8px;border:2px solid var(--orange)}
+  .closed h2{margin:0;font-size:1.4rem;font-weight:900;color:var(--ink)}
+  .closed p{margin:0;font-size:1rem;line-height:1.7}
   .done .id{font-size:.95rem;color:var(--muted)}
   .done .id b{color:var(--ink);font-family:ui-monospace,Consolas,monospace;font-size:1.1rem;letter-spacing:.06em}
   .card{border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(20,38,64,.18);background:#000}
@@ -115,7 +118,7 @@
 <div class="wrap">
   <header>
     <img id="hdrLogo" alt="مؤسسة سفراء الخير للتنمية المستدامة">
-    <h1>سجّل حضورك في سداسية الشباب</h1>
+    <h1>سداسية الشباب</h1>
     <p>الجمعة والسبت 6 و7 تشرين الثاني 2026 · فندق الرشيد، قاعة الزوراء، بغداد</p>
   </header>
 
@@ -135,7 +138,14 @@
     برنامج الفعالية
   </button>
 
-  <form class="box" id="form" autocomplete="on" novalidate>
+  <!-- Registration closed on 5 Nov 2026: the notice shows and the form stays hidden (the backend refuses new registrations too). -->
+  <section class="box closed" role="status">
+    <h2>انتهى التسجيل</h2>
+    <p>شكراً لاهتمامك بسداسية الشباب. أُغلق باب التسجيل.</p>
+    <p class="note">إن كنت قد سجّلت، أبرِز بطاقة الدخول (رمز QR) عند البوابة، أو أخبر فريق الاستقبال باسمك ورقم هاتفك.</p>
+  </section>
+
+  <form class="box hidden" id="form" autocomplete="on" novalidate>
     <label class="f" for="name">الاسم الكامل
       <input type="text" id="name" name="name" maxlength="60" placeholder="مثال: أحمد علي حسين" required autocomplete="name">
     </label>
